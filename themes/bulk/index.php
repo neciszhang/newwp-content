@@ -3,7 +3,8 @@
 <!-- start content container -->
 <div class="row">
 
-    <div class="col-md-<?php bulk_main_content_width_columns(); ?>">
+    <!-- <div class="col-md-<?php #bulk_main_content_width_columns(); ?>"> -->
+	<div class="col-md-12">
 
 		<?php
 		if ( have_posts() ) :
