@@ -3,6 +3,15 @@
 <!-- start content container -->
 <div class="row">
 
+	<div class="col-md-12 col-top">
+		<div class="col-left">
+			<img src="https://piratescollective.oss-cn-shanghai.aliyuncs.com/wp-content/uploads/2019/09/small.jpg" alt="">
+		</div>
+		<div class="col-right">
+			<?php get_sidebar( 'right' ); ?>
+		</div>
+	</div>
+
     <!-- <div class="col-md-<?php #bulk_main_content_width_columns(); ?>"> -->
 	<div class="col-md-12">
 
@@ -26,7 +35,7 @@
 
 	</div>
 
-	<?php get_sidebar( 'right' ); ?>
+	<?php #get_sidebar( 'right' ); ?>
 
 </div>
 <!-- end content container -->

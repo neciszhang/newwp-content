@@ -15,7 +15,8 @@
 		<?php else : ?>            
 			<?php get_template_part( 'content', 'none' ); ?>        
 		<?php endif; ?>    
-	</article>       
+	</article>    
+	   
 	<?php get_sidebar( 'right' ); ?>
 </div>
 <!-- end content container -->

@@ -1,40 +1,66 @@
 <?php get_header(); ?>
-<?php get_template_part( 'template-parts/template-part', 'content' ); ?>
-<!-- start content container -->
-<div class="row">
+<div class="archive-left">
+	
+	<header class="archive-page-header container-fluid text-center">
+			<img src="https://piratescollective.oss-cn-shanghai.aliyuncs.com/wp-content/uploads/2019/09/wp-bg.jpg" alt="">
+			<div class="archive-box">
+				<?php
+					if ( is_search() ) :
+						/* Translators: %s: Search result */ 
+						echo "<h1 class='search-head text-center'>" . sprintf( esc_html__( 'Search Results for: %s', 'bulk' ), get_search_query() ) . "</h1>";
+						
+					endif;
+					?>
+			</div>
+	</header><!-- .page-header -->
 
-    <div class="col-md-<?php bulk_main_content_width_columns(); ?>">
-		<?php
-		// if this was a search we display a page header with the results count. If there were no results we display the search form.
-		if ( is_search() ) :
-			/* Translators: %s: Search result */ 
-			echo "<h1 class='search-head text-center'>" . sprintf( esc_html__( 'Search Results for: %s', 'bulk' ), get_search_query() ) . "</h1>";
-			
-		endif;
+	<?php get_template_part( 'template-parts/template-part', 'content' ); ?>
+	<!-- start content container -->
+	<div class="row">
 
-		if ( have_posts() ) :
+		<div class="col-md-12 col-content">
+			<div class="col-left">
+				<img src="https://piratescollective.oss-cn-shanghai.aliyuncs.com/wp-content/uploads/2019/09/small.jpg" alt="">
+			</div>
+			<div class="col-right">
+				<?php get_sidebar( 'right' ); ?>
+			</div>
+		</div>
 
-			while ( have_posts() ) : the_post();
+		<!-- <div class="col-md-<?php #bulk_main_content_width_columns(); ?>"> -->
+		<div class="col-md-12">
+			<?php
+			// if this was a search we display a page header with the results count. If there were no results we display the search form.
+			#if ( is_search() ) :
+				/* Translators: %s: Search result */ 
+			#	echo "<h1 class='search-head text-center'>" . sprintf( esc_html__( 'Search Results for: %s', 'bulk' ), get_search_query() ) . "</h1>";
+				
+			#endif;
 
-				get_template_part( 'content', get_post_format() );
+			if ( have_posts() ) :
+
+				while ( have_posts() ) : the_post();
+
+					get_template_part( 'content', get_post_format() );
 
 
-			endwhile;
+				endwhile;
 
-			the_posts_pagination();
+				the_posts_pagination();
 
-		else :
+			else :
 
-			get_template_part( 'content', 'none' );
+				get_template_part( 'content', 'none' );
 
-		endif;
-		?>
+			endif;
+			?>
+
+		</div>
+
+		<?php #get_sidebar( 'right' ); ?>
 
 	</div>
+	<!-- end content container -->
 
-	<?php get_sidebar( 'right' ); ?>
-
+	<?php get_footer(); ?>
 </div>
-<!-- end content container -->
-
-<?php get_footer(); ?>

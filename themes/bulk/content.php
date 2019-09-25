@@ -1,10 +1,16 @@
 <article>
 	<div <?php post_class(); ?>>                    
-		<?php if ( has_post_thumbnail() ) : ?>                               
+		<?php #if ( has_post_thumbnail() ) : ?>                               
 			<a class="featured-thumbnail" href="<?php the_permalink(); ?>" title="<?php the_title_attribute(); ?>"> 
-				<?php the_post_thumbnail( 'bulk-single' ); ?>
+			<?php 
+				$featured_img_url = get_the_post_thumbnail_url(get_the_ID(),'full'); 
+				echo '<div style="background-image:url('.esc_url($featured_img_url).')" class="thumbnail-bg" rel="lightbox">'; 
+        		echo '</div>';
+			?>
+		
+				<?php #the_post_thumbnail( 'bulk-single' ); ?>
 			</a>								               
-		<?php endif; ?>	
+		<?php #endif; ?>	
 		<div class="main-content text-center">
 			<h2 class="page-header h1">                                
 				<a href="<?php the_permalink(); ?>" title="<?php the_title_attribute(); ?>" rel="bookmark">
@@ -24,6 +30,10 @@
 					<?php esc_html_e( 'Read more', 'bulk' ) ?>
 				</a>
 			</div>                                                             
-		</div>                   
+		</div>
+		
+		<div class="last-more">
+			<img src="https://piratescollective.oss-cn-shanghai.aliyuncs.com/wp-content/uploads/2019/09/tb-circle.png" alt="">
+		</div>
 	</div>
 </article>

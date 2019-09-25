@@ -7,8 +7,9 @@
 <?php } ?> 
 </div>
 <footer id="colophon" class="footer-credits container-fluid row">
-	<div class="container">
-	<?php do_action( 'bulk_generate_footer' ); ?> 
+	<div class="container text-center">
+	©2019 TBWA
+	<?php #do_action( 'bulk_generate_footer' ); ?> 
 	</div>	
 </footer>
 <!-- end main container -->

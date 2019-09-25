@@ -93,6 +93,12 @@ article .featured-thumbnail{
     overflow: hidden;
     display: block;
 }
+article .thumbnail-bg{
+    width: 252px;
+    height: 252px;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
 
 .woocommerce ul.products li.product:hover, .woocommerce-page ul.products li.product:hover {
     -webkit-box-shadow: none;
@@ -197,4 +203,30 @@ ul.nav.navbar-nav.navbar-right.visible-xs.login-cart {
 }
 .shrink ul.nav.navbar-nav.navbar-right.visible-xs.login-cart {
     padding-top: 6px;
+}
+@media (min-width: 1200px){
+    .main-container {
+        width: 970px !important;
+    }
+    article{
+        width: 226px;
+        /* height: 324px; */
+    }
+    article .thumbnail-bg{
+        width: 226px;
+        height: 226px;
+    }
+}
+@media (min-width: 1400px){
+    .main-container {
+        width: 1170px !important;
+    }
+    article{
+        width: 252px;
+        /* height: 324px; */
+    }
+    article .thumbnail-bg{
+        width: 252px;
+        height: 252px;
+    }
 }
